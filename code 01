@@ -1,0 +1,13 @@
+import React from'react';
+
+// Définir une interface pour typer les props
+interface GreetingProps {
+  name: string; // 'name' est une chaîne de caractères
+}
+
+// Typage du composant avec les props
+const Greeting: React.FC<GreetingProps> = ({ name }) => {
+  return <div>Bonjour, {name}!</div>;
+};
+
+export default Greeting;

@@ -1,0 +1,31 @@
+import React, { Component } from 'react';
+
+// Interface pour définir la forme de l'état
+interface CompteurState {
+  compte: number; // 'compte' est un nombre
+}
+
+// Typage du composant en tant que classe avec un état
+class Compteur extends Component<{}, CompteurState> {
+  // Initialisation de l'état
+  state: CompteurState = {
+    compte: 0, // Le compte commence à 0
+  };
+
+  // Méthode pour incrémenter le compteur
+  increment = () => {
+    this.setState({ compte: this.state.compte + 1 }); // Corrigé 'count' en 'compte'
+  };
+
+  // Méthode render pour afficher le JSX
+  render() {
+    return (
+      <div>
+        <p>Compte : {this.state.compte}</p> {/* Affichage du compte actuel */}
+        <button onClick={this.increment}>Incrément</button> {/* Bouton pour incrémenter */}
+      </div>
+    );
+  }
+}
+
+export default Compteur;
